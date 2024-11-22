@@ -1,0 +1,28 @@
+name: example
+description: A project that showcases usage of flutter_cache_manager
+publish_to: none
+version: 1.0.0+1
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  baseflow_plugin_template: ^2.2.0
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+  flutter_cache_manager:
+    path: ../
+  url_launcher:
+    git: https://github.com/kumsumit/url_launcher.git
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+dependency_overrides:
+  url_launcher:
+    git: https://github.com/kumsumit/url_launcher.git
+
+flutter:
+  uses-material-design: true
