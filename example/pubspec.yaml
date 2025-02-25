@@ -3,7 +3,7 @@ description: A project that showcases usage of flutter_cache_manager
 publish_to: none
 version: 1.0.0+1
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   baseflow_plugin_template: ^2.2.0
@@ -23,6 +23,8 @@ dev_dependencies:
 dependency_overrides:
   url_launcher:
     git: https://github.com/kumsumit/url_launcher.git
+  plugin_platform_interface:
+    git: https://github.com/kumsumit/plugin_platform_interface.git
 
 flutter:
   uses-material-design: true
