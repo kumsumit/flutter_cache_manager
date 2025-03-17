@@ -51,13 +51,14 @@ class CacheManagerPageState extends State<CacheManagerPage> {
           downloadFile: _downloadFile,
         ),
       );
+    } else {
+      return DownloadPage(
+        fileStream: fileStream!,
+        downloadFile: _downloadFile,
+        clearCache: _clearCache,
+        removeFile: _removeFile,
+      );
     }
-    return DownloadPage(
-      fileStream: fileStream!,
-      downloadFile: _downloadFile,
-      clearCache: _clearCache,
-      removeFile: _removeFile,
-    );
   }
 
   void _clearCache() {

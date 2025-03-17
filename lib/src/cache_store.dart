@@ -3,10 +3,6 @@ import 'dart:io';
 
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
-///Flutter Cache Manager
-///Copyright (c) 2019 Rene Floor
-///Released under MIT License.
-
 class CacheStore {
   Duration cleanupRunMinInterval = const Duration(seconds: 10);
 
@@ -156,6 +152,7 @@ class CacheStore {
     var futures = <Future>[];
     for (final cacheObject in allObjects) {
       futures.add(_removeCachedFile(cacheObject, toRemove));
+      // unawaited(_removeCachedFile(cacheObject, toRemove));
     }
     await Future.wait(futures);
     await provider.deleteAll(toRemove);
@@ -200,6 +197,7 @@ class CacheStore {
   }
 
   Future<void> dispose() async {
+    _scheduledCleanup?.cancel();
     final provider = await _cacheInfoRepository;
     await provider.close();
   }
